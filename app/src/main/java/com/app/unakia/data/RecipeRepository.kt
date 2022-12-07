@@ -1,6 +1,7 @@
 package com.app.unakia.data
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 
 class RecipeRepository(context : Context) {
     private lateinit var instance : RecipeRepository
@@ -27,9 +28,9 @@ class RecipeRepository(context : Context) {
         _recipeDAO.insert(recipe)
     }
 
-    public fun getRecipe(rID : Int)
+    public fun getRecipe(rID: Int) :  LiveData<Recipe>
     {
-        throw NotImplementedError()
+        return _recipeDAO.getRecipeByID(rID)
     }
 
     /**

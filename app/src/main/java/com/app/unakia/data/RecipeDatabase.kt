@@ -1,11 +1,11 @@
 package com.app.unakia.data
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
 
-@Database(entities = [Recipe::class], version = 0)
+
+@Database(entities = [Recipe::class], version = 1)
+@TypeConverters(DataTypeConverters::class)
 abstract class RecipeDatabase() : RoomDatabase() {
     abstract fun RecipeDAO() : RecipeDAO
 
